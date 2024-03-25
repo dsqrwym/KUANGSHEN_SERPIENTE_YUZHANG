@@ -196,7 +196,6 @@ public class Juego extends JPanel implements ActionListener{
                     if (nuevaposicion < 750) {
                         alimentosX = nuevaposicion;
                         alimentosY = serpiente.getPosicionY().get(0);
-                        System.out.println(0);
                     }
                 }
                 case 1 -> {
@@ -204,7 +203,6 @@ public class Juego extends JPanel implements ActionListener{
                     if (nuevaposicion >= 28) {
                         alimentosY = nuevaposicion;
                         alimentosX = serpiente.getPosicionX().get(0);
-                        System.out.println(1);
                     }
                 }
                 case 2 -> {
@@ -212,7 +210,6 @@ public class Juego extends JPanel implements ActionListener{
                     if (nuevaposicion >= 10) {
                         alimentosX = nuevaposicion;
                         alimentosY = serpiente.getPosicionY().get(0);
-                        System.out.println(2);
                     }
                 }
                 default -> {
@@ -220,7 +217,6 @@ public class Juego extends JPanel implements ActionListener{
                     if (nuevaposicion < 528) {
                         alimentosY = nuevaposicion;
                         alimentosX = serpiente.getPosicionX().get(0);
-                        System.out.println(3);
                     }
                 }
             }
@@ -233,14 +229,12 @@ public class Juego extends JPanel implements ActionListener{
                 i++;
             }
             maximo++;
-            System.out.println(serpiente.getPosicionX().get(i)+" = "+alimentosX +"\nY " +serpiente.getPosicionY().get(i) +" = " +alimentosY);
         }while (repite && maximo < 10000);
         if (!(maximo<10000)){
             inicio = true;
             isOver = true;
             isStart = true;
             temporizador.stop();
-            System.out.println("YOU WIN");
         }
     }
     private void crecer(){
@@ -251,22 +245,18 @@ public class Juego extends JPanel implements ActionListener{
         int finalizar = 0;
         do {
             alimentosX = 10 + 25*aleatorio.nextInt(30);
-            aleatorio.setSeed((long) (System.currentTimeMillis()*ThreadLocalRandom.current().nextDouble()));
+            aleatorio.setSeed((long) (System.nanoTime()*ThreadLocalRandom.current().nextDouble()));
             alimentosY = 28 + 25*aleatorio.nextInt(20);
             limitador++;
-            System.out.println("Entrado, Do While");
-            if (limitador > 8){
-                aleatorio.setSeed((long) (System.currentTimeMillis()* ThreadLocalRandom.current().nextDouble()));
-                System.out.println("new Random");
+            if (limitador > 10){
+                aleatorio.setSeed((long) (System.currentTimeMillis()*ThreadLocalRandom.current().nextDouble()));
                 limitador = 0;
                 finalizar++;
             }
         }while (serpiente.getPosicionX().contains(alimentosX) && serpiente.getPosicionY().contains(alimentosY) && finalizar<100);
         if (!(finalizar<100)){
-            System.out.println("CICLO INFINITO\n BREAK \n Realiza Solucion");
             solucionarCicloInfinito();
-        }//Es raro, si no break ciclo le queda infinita. Aunque la posicion no coincide con serpinte.
-        System.out.println("Salido");
+        }//Es raro, si no break ciclo le queda infinita. los numeros de aleatorios siempre son iguales.
         generarAlimentos(getGraphics());
         repaint();
         alimentoColor = color();
