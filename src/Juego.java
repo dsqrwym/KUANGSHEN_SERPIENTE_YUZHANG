@@ -79,9 +79,9 @@ public class Juego extends JPanel implements ActionListener{
                         serpiente = new Serpiente();
                         inicio = true;
                         isOver = false;
+                        score = 0;
                     } else {
                         inicio = false;
-                        score = 0;
                     }
                 }
             }
@@ -90,6 +90,7 @@ public class Juego extends JPanel implements ActionListener{
                 int keyCodigo = e.getKeyCode();
                 if (isStart && !isOver) {
                     switch (keyCodigo){
+                        case KeyEvent.VK_SPACE:
                         case KeyEvent.VK_LEFT:
                         case KeyEvent.VK_A:
                         case KeyEvent.VK_UP:
