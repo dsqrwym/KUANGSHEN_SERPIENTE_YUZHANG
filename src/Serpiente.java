@@ -47,25 +47,28 @@ public class Serpiente {
             posicionY.set(i, posicionY.get(i-1));
         }
         switch (direccion) {
-            case "R" -> {
+            case "R" : {
                     posicionX.set(0, posicionX.get(0) + 25);
                     if (posicionX.get(0) > 750) {
                         posicionX.set(0, 10);
                     }
+                    break;
                 }
-            case "U" -> {
+            case "U" : {
                 posicionY.set(0, posicionY.get(0) - 25);
                 if (posicionY.get(0) < 28){
                     posicionY.set(0, 528);
                 }
+                break;
             }
-            case "L" -> {
+            case "L" : {
                 posicionX.set(0, posicionX.get(0) - 25);
                 if (posicionX.get(0) < 10){
                     posicionX.set(0, 735);
                 }
+                break;
             }
-            default -> {
+            default : {
                 posicionY.set(0, posicionY.get(0) + 25);
                 if (posicionY.get(0) > 528){
                     posicionY.set(0, 28);

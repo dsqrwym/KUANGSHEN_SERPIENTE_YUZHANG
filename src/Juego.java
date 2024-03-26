@@ -191,28 +191,31 @@ public class Juego extends JPanel implements ActionListener{
         do {
             repite = false;
             switch (aleatorio.nextInt(3)) {
-                case 0 -> {
+                case 0 : {
                     nuevaposicion = serpiente.getPosicionX().get(0) + 25;
                     if (nuevaposicion < 750) {
                         alimentosX = nuevaposicion;
                         alimentosY = serpiente.getPosicionY().get(0);
                     }
+                    break;
                 }
-                case 1 -> {
+                case 1 : {
                     nuevaposicion = serpiente.getPosicionY().get(0) - 25;
                     if (nuevaposicion >= 28) {
                         alimentosY = nuevaposicion;
                         alimentosX = serpiente.getPosicionX().get(0);
                     }
+                    break;
                 }
-                case 2 -> {
+                case 2 : {
                     nuevaposicion = serpiente.getPosicionX().get(0) - 25;
                     if (nuevaposicion >= 10) {
                         alimentosX = nuevaposicion;
                         alimentosY = serpiente.getPosicionY().get(0);
                     }
+                    break;
                 }
-                default -> {
+                default : {
                     nuevaposicion = serpiente.getPosicionY().get(0) + 25;
                     if (nuevaposicion < 528) {
                         alimentosY = nuevaposicion;

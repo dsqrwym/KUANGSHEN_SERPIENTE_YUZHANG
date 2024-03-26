@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="KUANGSHEN_SERPIENTE_YUZHANG:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/KUANGSHEN_SERPIENTE_YUZHANG_jar</output-path>
+    <root id="archive" name="KUANGSHEN_SERPIENTE_YUZHANG.jar">
+      <element id="module-output" name="KUANGSHEN_SERPIENTE_YUZHANG" />
+    </root>
+  </artifact>
+</component>
