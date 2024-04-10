@@ -1,4 +1,4 @@
-这是一个基于JAVA 用INTELI J 做的小游戏。 欢迎任何人对其优化和更改。
+这是一个基于JAVA 用INTELI J 做的贪吃蛇游戏。基于狂神学JAVA的视频。 欢迎任何人对其优化和更改。
 
 Este es un pequeño juego basado en Java creado utilizando IntelliJ. Se agradecen todas las optimizaciones y cambios.
 
